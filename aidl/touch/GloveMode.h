@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include <aidl/vendor/lineage/touch/BnHighTouchPollingRate.h>
+#include <aidl/vendor/lineage/touch/BnGloveMode.h>
 #include <aidl/vendor/oplus/hardware/touch/IOplusTouch.h>
 
 namespace aidl {
@@ -15,9 +15,9 @@ namespace touch {
 
 using aidl::vendor::oplus::hardware::touch::IOplusTouch;
 
-class HighTouchPollingRate : public BnHighTouchPollingRate {
+class GloveMode : public BnGloveMode {
   public:
-    explicit HighTouchPollingRate(std::shared_ptr<IOplusTouch> oplusTouch);
+    explicit GloveMode(std::shared_ptr<IOplusTouch> oplusTouch);
 
     ndk::ScopedAStatus getEnabled(bool* _aidl_return) override;
     ndk::ScopedAStatus setEnabled(bool enabled) override;
